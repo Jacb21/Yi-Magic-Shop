@@ -41,6 +41,43 @@ export default function Home() {
           "Splash Premium 250ml, Crema Premium 236ml y bolsa Victoria Secret.",
       },
     ];
+    const kitsX3 = [
+      {
+        nombre: "Bombshell",
+        precio: 45000,
+        imagen: "/productos/bombshellx3.jpeg",
+      },
+      {
+        nombre: "Coconut Passion",
+        precio: 45000,
+        imagen: "/productos/coconutpassionx3.jpeg",
+      },
+      {
+        nombre: "Juiced Berry",
+        precio: 45000,
+        imagen: "/productos/juicedberryx3.jpeg",
+      },
+      {
+        nombre: "Mango Temptation",
+        precio: 45000,
+        imagen: "/productos/mangotemptationx3.jpeg",
+      },
+      {
+        nombre: "Pink Chiffon",
+        precio: 45000,
+        imagen: "/productos/pinkchiffonx3.jpeg",
+      },
+      {
+        nombre: "Pure Seduction",
+        precio: 45000,
+        imagen: "/productos/pureseductionx3.jpeg",
+      },
+      {
+        nombre: "Vanilla Lace",
+        precio: 45000,
+        imagen: "/productos/vanillalacex3.jpeg",
+      },
+    ];
     const kitsX2 = [
       {
         nombre: "Bombshell",
@@ -293,15 +330,41 @@ export default function Home() {
 
             <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
 
-              <div className="bg-white rounded-3xl shadow-xl p-6 text-center">
-                <h3 className="text-2xl font-bold mb-4">
-                  Próximamente
-                </h3>
+              {kitsX3.map((kits, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-3xl shadow-xl overflow-hidden"
+                >
+                  <img
+                    src={kits.imagen}
+                    alt={kits.nombre}
+                    className="h-72 w-full object-cover"
+                  />
 
-                <p>
-                  Aquí irán los kits x3.
-                </p>
-              </div>
+                  <div className="p-5">
+
+                    <h3 className="text-xl font-bold">
+                      {kits.nombre}
+                    </h3>
+
+                    <p className="text-pink-600 font-bold text-lg mt-2">
+                      ${kits.precio.toLocaleString()}
+                    </p>
+
+                    <p className="text-gray-600 mt-3">
+                      Incluye 1 Splash Premium, 1 Crema Premium, 1 Mantequilla Corporal y Bolsa Victoria's Secret.
+                    </p>
+
+                    <button
+                      onClick={agregarCarrito}
+                      className="w-full mt-4 bg-pink-600 text-white py-3 rounded-xl"
+                    >
+                      Agregar al carrito
+                    </button>
+
+                  </div>
+                </div>
+              ))}
 
             </div>
 

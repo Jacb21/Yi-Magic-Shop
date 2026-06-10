@@ -83,6 +83,63 @@ export default function Home() {
         imagen: "/productos/watermelon.jpeg",
       },
     ];
+    const SplashIndividuales = [
+      {
+        nombre: "Bombshell",
+        precio: 20000,
+        imagen: "/productos/splashbombshell.jpeg",
+      },
+      {
+        nombre: "Coconut Passion",
+        precio: 20000,
+        imagen: "/productos/splashcoconutpassion.jpeg",
+      },
+      {
+        nombre: "Juiced Berry",
+        precio: 20000,
+        imagen: "/productos/splashjuicedberry.jpeg",
+      },
+      {
+        nombre: "Mango Temptation",
+        precio: 20000,
+        imagen: "/productos/splashmangotemptation.jpeg",
+      },
+      {
+        nombre: "Pink Chiffon",
+        precio: 20000,
+        imagen: "/productos/splashpinkchiffon.jpeg",
+      },
+      {
+        nombre: "Pure Seduction",
+        precio: 20000,
+        imagen: "/productos/splashpureseduction.jpeg",
+      },
+      {
+        nombre: "Vanilla Lace",
+        precio: 20000,
+        imagen: "/productos/splashvanillalace.jpeg",
+      },
+      {
+        nombre: "Watermelon",
+        precio: 20000,
+        imagen: "/productos/splashwatermelon.jpeg",
+      },
+      {
+        nombre: "Love Spell",
+        precio: 20000,
+        imagen: "/productos/splashlovespell.jpeg",
+      },
+      {
+        nombre:"Aqua Kiss",
+        precio: 20000,
+        imagen: "/productos/splashaquakiss.jpeg",
+      },
+      {
+        nombre:"Candy Baby",
+        precio: 20000,
+        imagen: "/productos/splashcandybaby.jpeg",
+      }
+    ];
     const [mensaje, setMensaje] = useState("");
     const [abrirCarrito, setAbrirCarrito] = useState(false);
     
@@ -306,9 +363,41 @@ export default function Home() {
 
             <div className="grid md:grid-cols-4 gap-8 max-w-7xl mx-auto">
 
-              <div className="bg-white rounded-3xl shadow-xl p-6 text-center">
-                Próximamente
-              </div>
+              {SplashIndividuales.map((kit, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-3xl shadow-xl overflow-hidden"
+                >
+                  <img
+                    src={kit.imagen}
+                    alt={kit.nombre}
+                    className="h-72 w-full object-cover"
+                  />
+
+                  <div className="p-5">
+
+                    <h3 className="text-xl font-bold">
+                      {kit.nombre}
+                    </h3>
+
+                    <p className="text-pink-600 font-bold text-lg mt-2">
+                      ${kit.precio.toLocaleString()}
+                    </p>
+
+                    <p className="text-gray-600 mt-3">
+                      Incluye 1 Splash Premium.
+                    </p>
+
+                    <button
+                      onClick={agregarCarrito}
+                      className="w-full mt-4 bg-pink-600 text-white py-3 rounded-xl"
+                    >
+                      Agregar al carrito
+                    </button>
+
+                  </div>
+                </div>
+              ))}
 
             </div>
 

@@ -21,29 +21,71 @@ export default function Home() {
         return () => clearInterval(intervalo);
       }, []);
     const productos = [
-    {
+      {
        nombre: "Kit x3 Victoria Secret",
 
-      precio: 58000,
+       precio: 58000,
 
-      imagenes: [
-      "/productos/bombshell.jpeg",
-      "/productos/coconutpassion.jpeg",
-      "/productos/juicedberry.jpeg",
-      "/productos/mangotemptation.jpeg",
-      "/productos/pinkchiffon.jpeg",
-      "/productos/pureseduction.jpeg",
-      "/productos/vanillalace.jpeg",
-      "/productos/watermelon.jpeg",
-      ],
+       imagenes: [
+         "/productos/bombshell.jpeg",
+         "/productos/coconutpassion.jpeg",
+         "/productos/juicedberry.jpeg",
+         "/productos/mangotemptation.jpeg",
+         "/productos/pinkchiffon.jpeg",
+         "/productos/pureseduction.jpeg",
+         "/productos/vanillalace.jpeg",
+         "/productos/watermelon.jpeg",
+        ],
 
-      descripcion:
-        "Splash Premium 250ml, Crema Premium 236ml y bolsa Victoria Secret.",
-    },
-];
+        descripcion:
+          "Splash Premium 250ml, Crema Premium 236ml y bolsa Victoria Secret.",
+      },
+    ];
+    const kitsX2 = [
+      {
+        nombre: "Bombshell",
+        precio: 45000,
+        imagen: "/productos/bombshell.jpeg",
+      },
+      {
+        nombre: "Coconut Passion",
+        precio: 45000,
+        imagen: "/productos/coconutpassion.jpeg",
+      },
+      {
+        nombre: "Juiced Berry",
+        precio: 45000,
+        imagen: "/productos/juicedberry.jpeg",
+      },
+      {
+        nombre: "Mango Temptation",
+        precio: 45000,
+        imagen: "/productos/mangotemptation.jpeg",
+      },
+      {
+        nombre: "Pink Chiffon",
+        precio: 45000,
+        imagen: "/productos/pinkchiffon.jpeg",
+      },
+      {
+        nombre: "Pure Seduction",
+        precio: 45000,
+        imagen: "/productos/pureseduction.jpeg",
+      },
+      {
+        nombre: "Vanilla Lace",
+        precio: 45000,
+        imagen: "/productos/vanillalace.jpeg",
+      },
+      {
+        nombre: "Watermelon",
+        precio: 45000,
+        imagen: "/productos/watermelon.jpeg",
+      },
+    ];
     const [mensaje, setMensaje] = useState("");
     const [abrirCarrito, setAbrirCarrito] = useState(false);
-
+    
     const agregarCarrito = () => {
      setCart(cart + 1);
 
@@ -214,17 +256,43 @@ export default function Home() {
               🎁 Kits x2 Victoria's Secret
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-4 gap-8 max-w-7xl mx-auto">
 
-              <div className="bg-white rounded-3xl shadow-xl p-6 text-center">
-                <h3 className="text-2xl font-bold mb-4">
-                  Próximamente
-                </h3>
+              {kitsX2.map((kit, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-3xl shadow-xl overflow-hidden"
+                >
+                  <img
+                    src={kit.imagen}
+                    alt={kit.nombre}
+                    className="h-72 w-full object-cover"
+                  />
 
-                <p>
-                  Aquí irán los kits x2.
-                </p>
-              </div>
+                  <div className="p-5">
+
+                    <h3 className="text-xl font-bold">
+                      {kit.nombre}
+                    </h3>
+
+                    <p className="text-pink-600 font-bold text-lg mt-2">
+                      ${kit.precio.toLocaleString()}
+                    </p>
+
+                    <p className="text-gray-600 mt-3">
+                      Incluye 1 Splash Premium, 1 Crema Premium y Bolsa Victoria's Secret.
+                    </p>
+
+                    <button
+                      onClick={agregarCarrito}
+                      className="w-full mt-4 bg-pink-600 text-white py-3 rounded-xl"
+                    >
+                      Agregar al carrito
+                    </button>
+
+                  </div>
+                </div>
+              ))}
 
             </div>
 

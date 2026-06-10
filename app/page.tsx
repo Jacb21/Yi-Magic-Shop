@@ -87,57 +87,57 @@ export default function Home() {
       {
         nombre: "Bombshell",
         precio: 20000,
-        imagen: "/productos/splashbombshell.jpeg",
+        imagen: "/productos/splashbombshell.jpeg.jpeg",
       },
       {
         nombre: "Coconut Passion",
         precio: 20000,
-        imagen: "/productos/splashcoconutpassion.jpeg",
+        imagen: "/productos/splashcoconutpassion.jpeg.jpeg",
       },
       {
         nombre: "Juiced Berry",
         precio: 20000,
-        imagen: "/productos/splashjuicedberry.jpeg",
+        imagen: "/productos/splashjuicedberry.jpeg.jpeg",
       },
       {
         nombre: "Mango Temptation",
         precio: 20000,
-        imagen: "/productos/splashmangotemptation.jpeg",
+        imagen: "/productos/splashmangotemptation.jpeg.jpeg",
       },
       {
         nombre: "Pink Chiffon",
         precio: 20000,
-        imagen: "/productos/splashpinkchiffon.jpeg",
+        imagen: "/productos/splashpinkchiffon.jpeg.jpeg",
       },
       {
         nombre: "Pure Seduction",
         precio: 20000,
-        imagen: "/productos/splashpureseduction.jpeg",
+        imagen: "/productos/splashpureseduction.jpeg.jpeg",
       },
       {
         nombre: "Vanilla Lace",
         precio: 20000,
-        imagen: "/productos/splashvanillalace.jpeg",
+        imagen: "/productos/splashvainillalace.jpeg.jpeg",
       },
       {
         nombre: "Watermelon",
         precio: 20000,
-        imagen: "/productos/splashwatermelon.jpeg",
+        imagen: "/productos/splashwatermelon.jpeg.jpeg",
       },
       {
         nombre: "Love Spell",
         precio: 20000,
-        imagen: "/productos/splashlovespell.jpeg",
+        imagen: "/productos/splashlovespell.jpeg.jpeg",
       },
       {
         nombre:"Aqua Kiss",
         precio: 20000,
-        imagen: "/productos/splashaquakiss.jpeg",
+        imagen: "/productos/splashaquakiss.jpeg.jpeg",
       },
       {
         nombre:"Candy Baby",
         precio: 20000,
-        imagen: "/productos/splashcandybaby.jpeg",
+        imagen: "/productos/splashcandybaby.jpeg.jpeg",
       }
     ];
     const [mensaje, setMensaje] = useState("");
@@ -363,25 +363,25 @@ export default function Home() {
 
             <div className="grid md:grid-cols-4 gap-8 max-w-7xl mx-auto">
 
-              {SplashIndividuales.map((kit, index) => (
+              {SplashIndividuales.map((splash, index) => (
                 <div
                   key={index}
                   className="bg-white rounded-3xl shadow-xl overflow-hidden"
                 >
                   <img
-                    src={kit.imagen}
-                    alt={kit.nombre}
+                    src={splash.imagen}
+                    alt={splash.nombre}
                     className="h-72 w-full object-cover"
                   />
 
                   <div className="p-5">
 
                     <h3 className="text-xl font-bold">
-                      {kit.nombre}
+                      {splash.nombre}
                     </h3>
 
                     <p className="text-pink-600 font-bold text-lg mt-2">
-                      ${kit.precio.toLocaleString()}
+                      ${splash.precio.toLocaleString()}
                     </p>
 
                     <p className="text-gray-600 mt-3">

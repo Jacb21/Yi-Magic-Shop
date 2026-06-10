@@ -75,7 +75,7 @@ export default function Home() {
       {
         nombre: "Vanilla Lace",
         precio: 45000,
-        imagen: "/productos/vanillalacex3.jpeg",
+        imagen: "/productos/vainillalacex3.jpeg",
       },
     ];
     const kitsX2 = [
@@ -299,6 +299,59 @@ export default function Home() {
         <h1 className="text-5xl md:text-7xl font-extrabold text-pink-600 mb-6">
           Yi Magic Shop
         </h1>
+
+        <section className="py-12 px-6">
+          <div className="max-w-7xl mx-auto">
+
+            <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
+              Explora nuestras colecciones ✨
+            </h2>
+
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+
+              <a
+                href="#victoria-secret"
+                className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center hover:-translate-y-2"
+              >
+               <div className="text-5xl mb-3">🌸</div>
+               <h3 className="font-bold text-lg">Victoria's Secret</h3>
+              </a>
+
+              <a
+                href="#perfumes"
+                className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center hover:-translate-y-2"
+              >
+                <div className="text-5xl mb-3">💎</div>
+                <h3 className="font-bold text-lg">Perfumes</h3>
+              </a>
+
+              <a
+                href="#skincare"
+                className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center hover:-translate-y-2"
+              >
+                <div className="text-5xl mb-3">✨</div>
+                <h3 className="font-bold text-lg">Skincare</h3>
+              </a>
+
+              <a
+                href="#moda"
+                className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center hover:-translate-y-2"
+              >
+                <div className="text-5xl mb-3">👕</div>
+                <h3 className="font-bold text-lg">Moda</h3>
+              </a>
+
+              <a
+                href="#regalos"
+               className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center hover:-translate-y-2"
+              >
+                <div className="text-5xl mb-3">🎁</div>
+                <h3 className="font-bold text-lg">Regalos</h3>
+              </a>
+
+            </div>
+          </div>
+        </section>
 
         <p className="text-lg md:text-2xl text-gray-700 max-w-3xl mb-10">
           Regalos premium, detalles únicos y experiencias que enamoran.
